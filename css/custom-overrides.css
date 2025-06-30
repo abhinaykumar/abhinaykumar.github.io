@@ -196,8 +196,14 @@ html {
     text-decoration: none;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
+    font-size: 14px;
     cursor: pointer;
     transition: all 0.2s ease;
+    display: inline-block;
+    box-sizing: border-box;
+    line-height: 1.2;
+    vertical-align: top;
+    min-height: 44px;
 }
 
 .btn-project:hover {
@@ -213,6 +219,27 @@ html {
 
 .btn-project:focus {
     outline: none;
+    background: #333;
+}
+
+/* Button spacing and variants */
+.btn-primary {
+    margin-right: 10px;
+}
+
+.btn-secondary {
+    background: #000;
+}
+
+.btn-secondary:hover {
+    background: #333;
+}
+
+.btn-secondary:active {
+    background: #555;
+}
+
+.btn-secondary:focus {
     background: #333;
 }
 
@@ -305,6 +332,12 @@ html {
         margin-bottom: 10px;
         display: inline-block;
         width: auto;
+        min-height: 40px;
+        line-height: 1.2;
+    }
+
+    .btn-primary {
+        margin-right: 10px;
     }
 }
 
@@ -356,6 +389,14 @@ html {
         font-size: 13px;
         width: 100%;
         text-align: center;
+        margin-bottom: 8px;
+        min-height: 36px;
+        line-height: 1.2;
+        display: block;
+    }
+
+    .btn-primary {
+        margin-right: 0;
         margin-bottom: 8px;
     }
 
