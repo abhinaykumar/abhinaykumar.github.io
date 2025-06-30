@@ -1,87 +1,340 @@
-<!DOCTYPE HTML>
-<!--
-	Identity by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE html>
 <html>
 
 <head>
-    <title>Abhinay, Web Developer</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <title>Abhinay Kumar - Product Builder</title>
+
+    <!-- meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/pace.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/custom-overrides.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    <!-- js -->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/pace.min.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+
+
 </head>
 
-<body class="is-loading">
+<body>
+    <header id="site-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="main-nav" role="navigation">
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav navbar-center">
+                                <li class="cl-effect-11"><a href="#about" data-hover="About">About</a></li>
+                                <li class="cl-effect-11"><a href="#writing" data-hover="Writing">Writing</a></li>
+                                <li class="cl-effect-11"><a href="#poetry" data-hover="Poetry">Poetry</a></li>
+                                <li class="cl-effect-11"><a href="#projects" data-hover="Projects">Projects</a></li>
+                                <li class="cl-effect-11"><a href="#contact" data-hover="Contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    <!-- Wrapper -->
-    <div id="wrapper">
-
-        <!-- Main -->
-        <section id="main">
-            <header>
-                <span class="avatar"><img src="assets/img/abhinay.jpg" style="filter: grayscale(60%);" height="125" width="125" alt="" /></span>
-                <h1>
-                    Abhinay Kumar
-                </h1>
-
-                <p>
-                    Web Developer
+    <!-- Hero/About Section -->
+    <section id="about" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <img src="assets/img/abhinay.jpg" alt="Abhinay Kumar" class="hero-avatar">
+                <p class="hero-description">
+                    Hi, I'm Abhinay.<br><br>
+                    I've been building web apps for over a decade—fixing bugs, chasing weird edge cases, and sometimes
+                    watching things I built blow up in production (and learning more from that than any "best
+                    practice"). I'm drawn to the mess: the half‑baked requirements, the random edge case nobody thought
+                    of, the spaghetti you inherit at 2 AM.<br><br>
+                    Ruby and Rails have pretty much sponsored my lifestyle and showed me the right way of writing for
+                    the web.
+                    There's something beautiful about Ruby's elegance and Rails' opinionated conventions that just
+                    clicks—it's
+                    like the language was designed by people who actually had to maintain code at 3 AM. When everything
+                    else
+                    in tech feels like fighting uphill, Ruby feels like a conversation with an old friend.<br><br>
+                    When I'm not knee‑deep in code, you'll find me automating something pointless (or profoundly
+                    useful—depends on the week), plotting my next chess trap, or scribbling half‑formed ideas that may
+                    never see the light of day.<br><br>
+                    This corner of the internet is my scratchpad: raw thoughts, experiments, failures, and the
+                    occasional triumph. No polished sales pitch—just what's on my mind. Pull up a chair, dig around, and
+                    maybe you'll stumble on something that makes you go, "Huh, that's interesting."
                 </p>
-            </header>
-            <hr />
-            <p>
-                Technology Stack: <br/> Ruby, Javascript, RubyonRails
-            </p>
-            <footer>
-                <ul class="icons">
-                    <li><a href="https://stackoverflow.com/users/2545197/abhinay" target="_blank" class="fa-stack-overflow">Stackoverflow</a></li>
-                    <li><a href="https://github.com/abhinaykumar" target="_blank" class="fa-github">Github</a></li>
-                    <!-- <li><a href="https://twitter.com/abhinay_kumar1" target="_blank" class="fa-twitter">Twitter</a></li> -->
-                    <li><a href="https://www.linkedin.com/in/abhinaykumar21" target="_blank" class="fa-linkedin">LinkedIn</a></li>
-                </ul>
-            </footer>
-            <p>
-                <b>When in doubt, refactor!</b>
-            </p>
-            <ul class="icons">
-                <li>
-                    <button class="btn btn-default" style="letter-spacing:0.1em; text-transform: uppercase;height: 4.50em;font-family: 'Source Sans Pro', Helvetica, sans-serif; "
-                        onclick="location.href='https://abhinaykumar.in/activities/';">
-                        side projects
-                    </button>
-                </li>
-            </ul>
-            <p>email: <small>hey@abhinaykumar.in</small></p>
-        </section>
+            </div>
 
-        <!-- Footer -->
-        <!-- <footer id="footer">
-            <ul class="copyright"> -->
-                <!-- <li>&copy; Abhinay</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
-            <!-- </ul>
-        </footer> -->
+        </div>
+    </section>
+
+    <!-- Writing Section -->
+    <section id="writing" class="section-content">
+        <div class="container">
+            <h2 class="section-title">Writing</h2>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="project-card">
+                        <h3 class="project-title">GingerDev</h3>
+                        <p class="project-description">
+                            In this space, I dive into everything from the nuts and bolts of engineering,
+                            to personal finance tips, to reflections on life and stories that stretch the imagination.
+                        </p>
+                        <a href="https://gingerdev.substack.com/" target="_blank" class="btn-project">
+                            Read Articles →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Poetry Section -->
+    <section id="poetry" class="section-content">
+        <div class="container">
+            <h2 class="section-title">Poetry</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="project-card collapsible-card">
+                        <h3 class="project-title">Jab Tu Mujhse Milti Hai</h3>
+                        <p class="project-description">
+                            --- --- ---<br>
+                            <small style="color: #999; margin-top: 10px; display: block;">Poetry • May 16, 2021</small>
+                        </p>
+                        <div style="text-align: center; margin: 20px 0;">
+                            <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/432101856&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                        </div>
+                        <button class="btn-project" onclick="toggleCollapsible(this.parentElement)">
+                            Read more
+                        </button>
+                        <div class="collapsible-content">
+                            <div class="poem-content">
+                                <h4>Lyrics</h4>
+                                <p>Her raat per wo baat nikalti hai <br>
+                                    Mere dil se ye awaaz nikalti hai <br>
+                                    Ke jab tu mere sath chalti hai <br>
+                                    Jindagi her pal rukh badalti hai </p>
+                                <p>
+                                    Ankhein sab bayan karti hain <br>
+                                    Kehti kuch nahi, bas isharon per chalti hai <br>
+                                    Jindagi se gham haar jati hai <br>
+                                    Aur khushi aansuon me nikalti hai <br>
+                                    Kuch aisa hota hai, Jab tu mujhse milti hai
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="project-card collapsible-card">
+                        <h3 class="project-title">Not In My Name</h3>
+                        <p class="project-description">
+                            In support of #NotInMyName campaign<br>
+                            <small style="color: #999; margin-top: 10px; display: block;">Social • April 15,
+                                2018</small>
+                        </p>
+                        <div style="text-align: center; margin: 20px 0;">
+                            <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/429871275&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                        </div>
+                        <button class="btn-project" onclick="toggleCollapsible(this.parentElement)">
+                            Read more
+                        </button>
+                        <div class="collapsible-content">
+                            <div class="poem-content">
+                                <h4>Lyrics</h4>
+                                <p>For you it has always been a game <br>
+                                    A game where you always blame <br>
+                                    You blame me for what I am <br>
+                                    You blame me for religion and my name <br>
+                                    For you it has always been a game.... <br>
+                                </p>
+                                <p>
+                                    A game where we always loose <br>
+                                    And we played because we had none to choose <br>
+                                    A game where you let children cry <br>
+                                    A game where you let people die <br>
+                                    You never feel anything when it rains <br>
+                                    You never care when we are in pain <br>
+                                    But I promise you this time <br>
+                                    I won't let you play this game <br>
+                                    Atleast not in my name, not in my name <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-content">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="project-card collapsible-card">
+                        <h3 class="project-title">UnlockPDF</h3>
+                        <p class="project-description">
+                            Remove password protection from your PDFs in seconds. 100% secure, completely private,
+                            and lightning fast. Bank-level security with instant download.
+                        </p>
+                        <a href="https://unlockpdf.site/" target="_blank" class="btn-project"
+                            style="margin-right: 10px;">
+                            Try UnlockPDF →
+                        </a>
+                        <button class="btn-project" onclick="toggleCollapsible(this.parentElement)"
+                            style="background: #666;">
+                            Read more
+                        </button>
+                        <div class="collapsible-content">
+                            <div class="thank-you-details">
+                                <h4>Features</h4>
+                                <p><strong>Lightning Fast Processing:</strong> Unlock your PDFs in under 3 seconds with
+                                    our advanced processing engine. Handle even the most complex password-protected
+                                    documents instantly without any delays or waiting time.</p>
+                                <p><strong>Military-Grade Security:</strong> Your files are protected with 256-bit AES
+                                    encryption during processing. We never store your passwords, documents, or personal
+                                    information. Complete privacy and security guaranteed.</p>
+                                <p><strong>100% Online:</strong> Works directly in your browser. No downloads, no
+                                    installations, no hassle. Access from any device, anywhere in the world.</p>
+                                <p><strong>Smart History:</strong> Keep track of all your unlocked PDFs with our
+                                    intelligent history system. Download anytime, organized by date for easy access.</p>
+                                <p><strong>Generous Storage:</strong> Process PDFs up to 10MB in size with 100MB total
+                                    storage per user. Perfect for all your document needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="project-card collapsible-card">
+                        <h3 class="project-title">Thank You - Slack App</h3>
+                        <p class="project-description">
+                            App allows people in the workspace to send a thank you note with a slash command `/thanks`
+                            and maintains a list of people who have received appreciation from their teammates.
+                        </p>
+                        <a href="https://slack.com/oauth/v2/authorize?client_id=2939721809984.2924712627829&scope=chat:write,chat:write.public,commands&user_scope="
+                            target="_blank" class="btn-project" style="margin-right: 10px;">
+                            Add to Slack →
+                        </a>
+                        <button class="btn-project" onclick="toggleCollapsible(this.parentElement)"
+                            style="background: #666;">
+                            Read more
+                        </button>
+                        <div class="collapsible-content">
+                            <div class="thank-you-details">
+                                <h4>About Thank You App</h4>
+                                <p>Study shows that both expressing and receiving appreciation boosts the confidence of
+                                    the person and gives them a sense of satisfaction. It takes only one person in the
+                                    team to start the trend of appreciation. Especially for the remote teams it is now
+                                    even more important to engage in conversations about helping beyond the scope of
+                                    work and what is a better way to break the ice than with a simple Thank you.</p>
+                                <p>App allows people in the workspace to send a thank you note with a slash command
+                                    <strong>/thanks</strong> and maintains a list of people who have received
+                                    appreciation from their teammates. The list can be accessed by typing
+                                    <strong>/thanks report</strong>. typing <strong>/thank help</strong> returns
+                                    instructions about how to use the app.
+                                </p>
+                                <p style="text-align: center; margin-top: 20px;">
+                                    <a
+                                        href="https://slack.com/oauth/v2/authorize?client_id=2939721809984.2924712627829&scope=chat:write,chat:write.public,commands&user_scope="><img
+                                            alt="Add to Slack" height="40" width="139"
+                                            src="https://platform.slack-edge.com/img/add_to_slack.png"
+                                            srcSet="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
+                                </p>
+                                <p><small>For any queries or to request to delete any data, please contact
+                                        <strong>hey@abhinaykumar.in</strong>.</small></p>
+                                <p><small><em>Please note, that the app does not store your personal information except
+                                            the slack user-id.</em><br>
+                                        Also, read <u><a
+                                                href="https://abhinaykumar.in/activities/apps/thank-you/privacy-policy.html">privacy
+                                                policy</a></u> here.</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
-    </div>
 
+    <!-- Contact Section -->
+    <section id="contact" class="section-content">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <p style="font-size: 1.1em; margin-bottom: 30px;">
+                        Let's connect and build something amazing together.
+                    </p>
+                    <p style="font-size: 1.2em; margin-bottom: 30px;">
+                        <strong>hey@abhinaykumar.in</strong>
+                    </p>
+                    <ul class="social-links">
+                        <li><a href="https://x.com/gingerdev_" target="_blank" class="fa fa-twitter" title="X.com"></a>
+                        </li>
+                        <li><a href="https://github.com/abhinaykumar" target="_blank" class="fa fa-github"
+                                title="GitHub"></a></li>
+                        <li><a href="https://www.linkedin.com/in/abhinaykumar21" target="_blank" class="fa fa-linkedin"
+                                title="LinkedIn"></a></li>
+                        <li><a href="https://stackoverflow.com/users/2545197/abhinay" target="_blank"
+                                class="fa fa-stack-overflow" title="Stack Overflow"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Scripts -->
-    <!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
+    <!-- Footer -->
+    <footer id="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="copyright">
+                        &copy; 2024
+                        <script>new Date().getFullYear() > 2024 && document.write("-" + new Date().getFullYear());</script>
+                        ,
+                        <a href="https://abhinaykumar.in" target='_blank'>abhinaykumar.in</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
     <script>
-        if ('addEventListener' in window) {
-            window.addEventListener('load', function() {
-                document.body.className = document.body.className.replace(/\bis-loading\b/, '');
+        function toggleCollapsible(element) {
+            const content = element.querySelector('.collapsible-content');
+            const buttons = element.querySelectorAll('.btn-project');
+
+            // Find the "Read more" button (not the external link)
+            let toggleButton = null;
+            buttons.forEach(btn => {
+                if (btn.textContent.includes('Read more') || btn.textContent.includes('Read less')) {
+                    toggleButton = btn;
+                }
             });
-            document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                if (toggleButton) toggleButton.textContent = 'Read more';
+            } else {
+                content.classList.add('active');
+                if (toggleButton) toggleButton.textContent = 'Read less';
+            }
         }
     </script>
-
 </body>
 
 </html>
