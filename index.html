@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Abhinay Kumar - Product Builder</title>
+    <title>Abhinay Kumar - Product Engineer</title>
 
     <!-- meta -->
     <meta charset="UTF-8">
@@ -52,30 +52,68 @@
             <div class="hero-content">
                 <img src="assets/img/abhinay.jpg" alt="Abhinay Kumar" class="hero-avatar">
                 <p class="hero-description">
-                    I've spent the last ten years wrangling web apps—wrestling with half‑baked specs, tackling edge
-                    cases nobody saw coming, and yes, occasionally watching my own creations misbehave in production
-                    (the best lessons always come wrapped in chaos). Give me the messy, the uncharted corner, the
-                    inherited spaghetti code—I thrive there.<br><br>
-                    Ruby and Rails aren't just tools to me; they're longtime collaborators. There's a poetry in Ruby's
-                    syntax and a comforting rhythm in Rails' conventions that feels less like "framework" and more like
-                    an early‑morning conversation with a friend who's been through the trenches. When everything else in
-                    tech seems like pushing boulders uphill, coding in Ruby feels like dropping into a hammock.<br><br>
-                    Off the clock, you'll catch me automating the trivial (or utterly game‑changing—it really depends on
-                    the day), plotting my next tactical chess gambit, or scribbling half‑baked ideas in a notebook—most
-                    of which will never see the light of day.<br><br>
-                    This little corner of cyberspace is my workshop: unvarnished thoughts, prototypes, misfires, and
-                    every tiny victory along the way. No polished brochures—just whatever's rattling around in my head.
-                    Feel free to poke around, and who knows? You might find something that sparks your curiosity.
+                    Hi, I am Abhinay Kumar, a human being with sprinkle of interests in software engineering, music,
+                    writing, and chess.
+                    After over a decade of building products and shaping engineering teams, I have come to realize that
+                    how important it is to take a step back and reflect on the journey. Focus on important things
+                    like family, friends, health and my personal interests. what I share here is my attempt to try and
+                    ignite some spark in the lost souls to pause, relax and reflect including myself.
                 </p>
             </div>
 
         </div>
     </section>
 
+    <!-- Chess section from chess.com -->
+    <section id="chess" class="section-content">
+        <div class="container">
+            <h2 class="section-title">Chess <span style="font-size: 1.2em;">♟️</span></h2>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div id="chess-card" class="project-card">
+                        <div class="chess-header" style="display:flex;align-items:center;gap:15px;">
+                            <img src="https://images.chesscomfiles.com/uploads/v1/user/158659353.09ee944d.200x200o.f29bdf8060cd.jpeg"
+                                alt="avatar" style="width:56px;height:56px;border-radius:50%;object-fit:cover;">
+                            <div>
+                                <div class="project-title" style="margin:0;">Pikachu KaChachu</div>
+                                <div style="color:#888;">League: Champion • India</div>
+                            </div>
+                        </div>
+                        <div class="chess-body" style="margin-top:15px;">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="project-description"><strong>Rapid Rating</strong><br><span
+                                            id="chess-rapid-rating">—</span></div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="project-description"><strong>Blitz Rating</strong><br><span
+                                            id="chess-blitz-rating">—</span></div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="project-description"><strong>Won-Loss-Draw</strong><br><span
+                                            id="chess-rapid-record">—</span></div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="project-description"><strong>Last Game</strong><br><a
+                                            id="chess-last-game" target="_blank" href="#" style="display:none;">Open
+                                            →</a><span id="chess-last-game-na">—</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chess-footer" style="margin-top:15px; text-align:left;">
+                            <a class="btn-project" target="_blank"
+                                href="https://www.chess.com/member/PikachuKaChachu">View Profile →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Writing Section -->
     <section id="writing" class="section-content">
         <div class="container">
-            <h2 class="section-title">Writing</h2>
+            <h2 class="section-title">Writing ✍️</h2>
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <div class="project-card">
@@ -96,7 +134,7 @@
     <!-- Poetry Section -->
     <section id="poetry" class="section-content">
         <div class="container">
-            <h2 class="section-title">Poetry</h2>
+            <h2 class="section-title">Poetry 📜</h2>
             <div class="row">
                 <div class="col-md-6">
                     <div class="project-card collapsible-card">
@@ -176,7 +214,7 @@
     <!-- Projects Section -->
     <section id="projects" class="section-content">
         <div class="container">
-            <h2 class="section-title">Projects</h2>
+            <h2 class="section-title">Projects 🚀</h2>
             <div class="row">
                 <div class="col-md-6">
                     <div class="project-card collapsible-card">
@@ -265,7 +303,7 @@
     <!-- Contact Section -->
     <section id="contact" class="section-content">
         <div class="container">
-            <h2 class="section-title">Contact</h2>
+            <h2 class="section-title">Contact ✉️</h2>
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center">
                     <p style="font-size: 1.1em; margin-bottom: 30px;">
@@ -305,7 +343,7 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+
     <script>
         function toggleCollapsible(element) {
             const content = element.querySelector('.collapsible-content');
@@ -327,6 +365,75 @@
                 if (toggleButton) toggleButton.textContent = 'Read less';
             }
         }
+    </script>
+    <script>
+        (function () {
+            var STATS_URL = 'https://api.chess.com/pub/player/pikachukachachu/stats';
+            function setText(id, text) {
+                var el = document.getElementById(id);
+                if (el) el.textContent = text;
+            }
+            function setLastGame(url) {
+                var link = document.getElementById('chess-last-game');
+                var na = document.getElementById('chess-last-game-na');
+                if (link && na) {
+                    if (url) {
+                        link.href = url;
+                        link.style.display = 'inline';
+                        na.style.display = 'none';
+                    } else {
+                        link.style.display = 'none';
+                        na.style.display = 'inline';
+                    }
+                }
+            }
+            function onError() {
+                setText('chess-rapid-rating', '—');
+                setText('chess-blitz-rating', '—');
+                setText('chess-rapid-record', '—');
+                setLastGame('');
+            }
+            function fetchStats() {
+                try {
+                    var req = new XMLHttpRequest();
+                    req.open('GET', STATS_URL, true);
+                    req.onreadystatechange = function () {
+                        if (req.readyState === 4) {
+                            if (req.status >= 200 && req.status < 300) {
+                                try {
+                                    var data = JSON.parse(req.responseText);
+                                    var rapid = (data && data.chess_rapid) || {};
+                                    var blitz = (data && data.chess_blitz) || {};
+                                    var last = rapid.last || {};
+                                    var record = rapid.record || { win: 0, loss: 0, draw: 0 };
+                                    var rating = (typeof last.rating === 'number') ? last.rating : '—';
+                                    setText('chess-rapid-rating', String(rating));
+                                    var blitzLast = blitz.last || {};
+                                    var blitzRating = (typeof blitzLast.rating === 'number') ? blitzLast.rating : '—';
+                                    setText('chess-blitz-rating', String(blitzRating));
+                                    setText('chess-rapid-record', [record.win || 0, record.loss || 0, record.draw || 0].join('-'));
+                                    // Use best.game as proxy for a playable link
+                                    var best = rapid.best || {};
+                                    setLastGame(best.game || '');
+                                } catch (e) {
+                                    onError();
+                                }
+                            } else {
+                                onError();
+                            }
+                        }
+                    };
+                    req.send();
+                } catch (e) {
+                    onError();
+                }
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', fetchStats);
+            } else {
+                fetchStats();
+            }
+        })();
     </script>
 </body>
 
