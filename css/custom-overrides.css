@@ -64,7 +64,7 @@ html {
 }
 
 .section-content {
-    padding: 65px 20px;
+    padding: 35px 20px;
     text-align: center;
 }
 
@@ -308,7 +308,7 @@ html {
     .hero-avatar {
         width: 120px;
         height: 120px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     .section-title {
@@ -317,7 +317,7 @@ html {
     }
 
     .section-content {
-        padding: 40px 15px;
+        padding: 35px 15px;
     }
 
     .project-card {
