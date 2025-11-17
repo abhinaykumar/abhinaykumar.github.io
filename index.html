@@ -94,7 +94,7 @@
                             <img src="https://images.chesscomfiles.com/uploads/v1/user/158659353.09ee944d.200x200o.f29bdf8060cd.jpeg"
                                 alt="avatar" style="width:56px;height:56px;border-radius:50%;object-fit:cover;">
                             <div>
-                                <div class="project-title" style="margin:0;">Pikachu KaChachu</div>
+                                <div class="project-title" style="margin:0;">PikachuKaChachu</div>
                                 <div style="color:#888;">League: Champion • India</div>
                             </div>
                         </div>
@@ -115,7 +115,13 @@
                                 <div class="col-md-3">
                                     <div class="project-description"><strong>Last Game</strong><br><a
                                             id="chess-last-game" target="_blank" href="#" style="display:none;">Open
-                                            →</a><span id="chess-last-game-na">—</span></div>
+                                            →</a><span id="chess-last-game-na">—</span>
+                                        <div id="chess-last-game-meta"
+                                            style="font-size:12px;color:#666;margin-top:4px;display:none;">
+                                            <span id="chess-last-game-result"></span>
+                                            <span id="chess-last-game-eco" style="display:block;margin-top:2px;"></span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -364,25 +370,10 @@
                 var el = document.getElementById(id);
                 if (el) el.textContent = text;
             }
-            function setLastGame(url) {
-                var link = document.getElementById('chess-last-game');
-                var na = document.getElementById('chess-last-game-na');
-                if (link && na) {
-                    if (url) {
-                        link.href = url;
-                        link.style.display = 'inline';
-                        na.style.display = 'none';
-                    } else {
-                        link.style.display = 'none';
-                        na.style.display = 'inline';
-                    }
-                }
-            }
             function onError() {
                 setText('chess-rapid-rating', '—');
                 setText('chess-blitz-rating', '—');
                 setText('chess-rapid-record', '—');
-                setLastGame('');
             }
             function fetchStats() {
                 try {
@@ -403,9 +394,6 @@
                                     var blitzRating = (typeof blitzLast.rating === 'number') ? blitzLast.rating : '—';
                                     setText('chess-blitz-rating', String(blitzRating));
                                     setText('chess-rapid-record', [record.win || 0, record.loss || 0, record.draw || 0].join('-'));
-                                    // Use best.game as proxy for a playable link
-                                    var best = rapid.best || {};
-                                    setLastGame(best.game || '');
                                 } catch (e) {
                                     onError();
                                 }
@@ -423,6 +411,110 @@
                 document.addEventListener('DOMContentLoaded', fetchStats);
             } else {
                 fetchStats();
+            }
+        })();
+    </script>
+    <script>
+        (function () {
+            function pad2(n) { return n < 10 ? '0' + n : String(n); }
+            function setLatestRapid(game) {
+                var link = document.getElementById('chess-last-game');
+                var na = document.getElementById('chess-last-game-na');
+                var meta = document.getElementById('chess-last-game-meta');
+                var resultEl = document.getElementById('chess-last-game-result');
+                var ecoEl = document.getElementById('chess-last-game-eco');
+                if (!link || !na || !meta || !resultEl || !ecoEl) return;
+                if (game && game.url) {
+                    link.href = game.url;
+                    link.style.display = 'inline';
+                    na.style.display = 'none';
+                    // lock so stats script does not override this
+                    link.setAttribute('data-lock', 'true');
+                    // Result for our player
+                    try {
+                        var me = 'pikachukachachu';
+                        var isWhite = (game.white && (game.white.username || '').toLowerCase() === me);
+                        var res = isWhite ? (game.white && game.white.result) : (game.black && game.black.result);
+                        resultEl.textContent = res ? ('Result: ' + res) : '';
+                    } catch (_) {
+                        resultEl.textContent = '';
+                    }
+                    // ECO handling (can be a URL or code)
+                    var ecoVal = game.eco;
+                    ecoEl.innerHTML = '';
+                    if (typeof ecoVal === 'string' && ecoVal.indexOf('http') === 0) {
+                        var a = document.createElement('a');
+                        a.href = ecoVal;
+                        a.target = '_blank';
+                        a.rel = 'noopener';
+                        var linkText = 'Opening';
+                        try {
+                            var u = new URL(ecoVal);
+                            var segs = u.pathname.split('/').filter(Boolean);
+                            var lastSeg = segs[segs.length - 1] || '';
+                            if (lastSeg) linkText = decodeURIComponent(lastSeg);
+                        } catch (_) {
+                            var rawSegs = ecoVal.split('/');
+                            var last = rawSegs[rawSegs.length - 1] || '';
+                            if (last) linkText = decodeURIComponent(last);
+                        }
+                        a.textContent = linkText;
+                        ecoEl.appendChild(document.createTextNode('Opening: '));
+                        ecoEl.appendChild(a);
+                    } else if (ecoVal) {
+                        ecoEl.textContent = 'Opening: ' + ecoVal;
+                    }
+                    meta.style.display = (resultEl.textContent || ecoEl.textContent || ecoEl.children.length) ? 'block' : 'none';
+                } else {
+                    link.style.display = 'none';
+                    na.style.display = 'inline';
+                    meta.style.display = 'none';
+                    // remove lock so stats can populate something else
+                    link.removeAttribute('data-lock');
+                }
+            }
+            function fetchLatestRapidForCurrentMonth() {
+                try {
+                    var now = new Date();
+                    var year = now.getUTCFullYear();
+                    var month = pad2(now.getUTCMonth() + 1);
+                    var url = 'https://api.chess.com/pub/player/pikachukachachu/games/' + year + '/' + month;
+                    var req = new XMLHttpRequest();
+                    req.open('GET', url, true);
+                    req.onreadystatechange = function () {
+                        if (req.readyState === 4) {
+                            if (req.status >= 200 && req.status < 300) {
+                                try {
+                                    var data = JSON.parse(req.responseText);
+                                    var games = (data && data.games) || [];
+                                    var rapids = games.filter(function (g) { return g && g.time_class === 'rapid'; });
+                                    if (rapids.length) {
+                                        rapids.sort(function (a, b) {
+                                            var ea = typeof a.end_time === 'number' ? a.end_time : 0;
+                                            var eb = typeof b.end_time === 'number' ? b.end_time : 0;
+                                            return eb - ea;
+                                        });
+                                        setLatestRapid(rapids[0]);
+                                    } else {
+                                        setLatestRapid(null);
+                                    }
+                                } catch (e) {
+                                    setLatestRapid(null);
+                                }
+                            } else {
+                                setLatestRapid(null);
+                            }
+                        }
+                    };
+                    req.send();
+                } catch (e) {
+                    setLatestRapid(null);
+                }
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', fetchLatestRapidForCurrentMonth);
+            } else {
+                fetchLatestRapidForCurrentMonth();
             }
         })();
     </script>
